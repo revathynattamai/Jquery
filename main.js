@@ -10,7 +10,7 @@ $(function () {
         success: function (orders) {
             $.each(orders, function (i, data) {
                 $orders.append('<tr><td>'+data.no+'</td><td>'+data.id+'</td><td>'+data.text+'</td><td><button id ='+data.id+' type="button" class="remove">delete</button></td></tr>');
-                add();
+                // add();
             });
         },
         error: function()
@@ -41,6 +41,7 @@ $(function () {
             console.log(newAdd);
             $orders.append('<tr><td>'+newAdd.no+'</td><td>'+newAdd.id+'</td><td>'+newAdd.text+'</td><td><button id ='+newAdd.id+' type="button" class="remove">delete</button></td></tr>');
             add();
+            $("#reset").click();
         },
         error:function() {
             alert('ID should be unique');
@@ -152,3 +153,4 @@ function drawGraph(xData, data) {
     
 
 }
+add();
